@@ -1,0 +1,141 @@
+/* Colores principales - elegí estos porque combinan bien con el tema de pinturería */
+:root {
+    --primary-color: #2C3E50;    /* azul oscuro */
+    --accent-color: #E74C3C;     /* rojo */
+    --gray-light: #ECF0F1;       /* gris clarito para fondos */
+}
+
+/* Reset basico - siempre me olvido del box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setup general */
+body{
+    font-family: 'Segoe UI', sans-serif;  /* la mejor font para Windows */
+    background-color: #f8f9fa;  /* fondo sutilmente gris */
+}
+
+/* Header principal - le puse sombra para que se destaque un poco */
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Menu de categorias - flexbox para alinear botones */
+.categorias {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+}
+
+/* Botones de categoria - me copie el diseño de mercadomlibre */
+.categoria-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: var(--gray-light);
+    cursor: pointer;
+    border-radius: 20px;  /* bordes redondeados quedan mejor pero revisar si lo saco*/
+    transition: all 0.3s;
+}
+
+/* Categoria seleccionada */
+.categoria-btn.activo {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Layout principal - grid para sidebar del carrito */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;  /* carrito ocupa 1/4 del ancho */
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Grid responsive para productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjetas de producto - con efecto hover */
+.producto-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+/* Efecto hover suave */
+.producto-card:hover {
+    transform: translateY(-5px);  /* lo hago  elevar un poquitito */
+}
+
+/* Muestra del color de la pintura */
+.color-muestra {
+    height: 150px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Precio destacado */
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+/* Botones - con efecto hover */
+button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Efecto de boton en hover */
+button:hover {
+    background: #c0392b; 
+}
+
+/* Panel del carrito */
+#carrito {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Lista de items en el carrito */
+#items-carrito {
+    margin: 1rem 0;
+}
+
+/* Separo la parte de items y del total */
+#total {
+    border-top: 2px solid var(--gray-light);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Botón finalizar compra, ancho completo  */
+#finalizar-compra {
+    width: 100%;
+    margin-top: 1rem;
+}

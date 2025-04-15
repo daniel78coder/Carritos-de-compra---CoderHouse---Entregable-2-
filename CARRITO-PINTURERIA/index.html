@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./Js/index.js"></script>
+    <link rel="stylesheet" href="./Css/style.css" />
+    <title>Pinturería DANY</title>
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Pinturería DANY</h1>
+      <div id="carrito-icon">
+        <span>Mi carrito</span>
+        <span id="contador-carrito">0</span>
+      </div>
+    </header>
+
+    <div class="categorias">
+      <button class="categoria-btn activo">Interiores</button>
+      <button class="categoria-btn">Exteriores</button>
+      <button class="categoria-btn">Accesorios</button>
+    </div>
+
+    <main>
+      <section id="productos">
+        <div class="grid-productos">
+          <div class="producto-card">
+            <div class="color-muestra" style="background-color: #f5f5dc"></div>
+            <h3>Látex Interior Beige</h3>
+            <p>20 litros</p>
+            <p class="precio">$15,000</p>
+            <button onclick="agregarAlCarrito(1)">Agregar al carrito</button>
+          </div>
+
+          <div class="producto-card">
+            <div class="color-muestra" style="background-color: #ffffff"></div>
+            <h3>Látex Blanco</h3>
+            <p>10 litros</p>
+            <p class="precio">$8,500</p>
+            <button onclick="agregarAlCarrito(2)">Agregar al carrito</button>
+          </div>
+          <div class="producto-card">
+            <div>
+              <div
+                class="color-muestra"
+                style="background-color: #87ceeb"
+              ></div>
+            </div>
+            <h3>Pintura Cielo</h3>
+            <p>4 litros</p>
+            <p class="precio">$4,200</p>
+            <button onclick="agregarAlCarrito(3)">Agregar al carrito</button>
+          </div>
+        </div>
+      </section>
+
+      <aside id="carrito">
+        <h2>Mi Carrito</h2>
+        <div id="items-carrito"></div>
+        <div id="total">
+          <p>Total: $<span id="total-precio">0</span></p>
+          <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
