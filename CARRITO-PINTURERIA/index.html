@@ -3,29 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="./Js/index.js"></script>
     <link rel="stylesheet" href="./Css/style.css" />
-    <title>Pinturería DANY</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script defer src="./Js/productos.js"></script>
+    <script defer src="./Js/checkout.js"></script>
+    <title>Pinturería GALLO-JIM</title>
   </head>
+
   <body>
     <header>
-      <h1>🎨 Pinturería DANY</h1>
+      <h1>🎨 Pinturería GALLO-JIM</h1>
       <div id="carrito-icon">
         <span>Mi carrito</span>
         <span id="contador-carrito">0</span>
       </div>
+      <div id="usuario">
+        <button id="btn-login">Iniciar Sesión</button>
+        <span id="nombre-usuario"></span>
+      </div>
     </header>
-
-    <div class="categorias">
-      <button class="categoria-btn activo">Interiores</button>
-      <button class="categoria-btn">Exteriores</button>
-      <button class="categoria-btn">Accesorios</button>
-    </div>
 
     <main>
       <section id="productos">
-        <div class="grid-productos">
-        </div>
+        <div class="grid-productos"></div>
       </section>
 
       <aside id="carrito">

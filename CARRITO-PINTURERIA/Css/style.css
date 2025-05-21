@@ -1,141 +1,187 @@
-/* Colores principales - elegí estos porque combinan bien con el tema de pinturería */
-:root {
-    --primary-color: #2C3E50;    /* azul oscuro */
-    --accent-color: #E74C3C;     /* rojo */
-    --gray-light: #ECF0F1;       /* gris clarito para fondos */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #afd1f2;
+  color: #333;
 }
 
-/* Reset basico - siempre me olvido del box-sizing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Setup general */
-body{
-    font-family: 'Segoe UI', sans-serif;  /* la mejor font para Windows */
-    background-color: #f8f9fa;  /* fondo sutilmente gris */
-}
-
-/* Header principal - le puse sombra para que se destaque un poco */
+/* Header */
 header {
-    background: var(--primary-color);
-    color: white;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #1e1265;
+  color: rgb(239, 234, 234);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Menu de categorias - flexbox para alinear botones */
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+#carrito-icon {
+  cursor: pointer;
+  background-color: #bdbab2;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#contador-carrito {
+  background-color: #b2b3bd;
+  color: rgb(68, 39, 213);
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 50%;
+}
+
+/* sector categorias */
 .categorias {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: white;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
-/* Botones de categoria - me copie el diseño de mercadomlibre */
 .categoria-btn {
-    padding: 0.5rem 1.5rem;
-    border: none;
-    background: var(--gray-light);
-    cursor: pointer;
-    border-radius: 20px;  /* bordes redondeados quedan mejor pero revisar si lo saco*/
-    transition: all 0.3s;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #e9ecef;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-/* Categoria seleccionada */
-.categoria-btn.activo {
-    background: var(--primary-color);
-    color: white;
+.categoria-btn.activo,
+.categoria-btn:hover {
+  background-color: #0d6efd;
+  color: white;
 }
 
-/* Layout principal - grid para sidebar del carrito */
+/* Contenedor principal */
 main {
-    display: grid;
-    grid-template-columns: 3fr 1fr;  /* carrito ocupa 1/4 del ancho */
-    gap: 2rem;
-    padding: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-/* Grid responsive para productos */
-.grid-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+#productos .grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Tarjetas de producto - con efecto hover */
-.producto-card {
-    background: white;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+/* cards de los Productos */
+.producto {
+  background-color: #ffffff;
+  border: 1px solid #451cc1;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(48, 12, 137, 0.1);
+  transition: transform 0.2s ease;
 }
 
-/* Efecto hover suave */
-.producto-card:hover {
-    transform: translateY(-5px);  /* lo hago  elevar un poquitito */
+.producto:hover {
+  transform: translateY(-5px);
 }
 
-/* Muestra del color de la pintura */
-.color-muestra {
-    height: 150px;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+.producto img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
-/* Precio destacado */
-.precio {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 1rem 0;
+.producto h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
 }
 
-/* Botones - con efecto hover */
-button {
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+.producto p {
+  margin: 0.3rem 0 0.8rem;
+  font-weight: bold;
+  color: #198754;
 }
 
-/* Efecto de boton en hover */
-button:hover {
-    background: #c0392b; 
+.producto button {
+  padding: 0.4rem 0.8rem;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Panel del carrito */
+.producto button:hover {
+  background-color: #157347;
+}
+
+/* Carrito */
 #carrito {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: rgb(208, 217, 223);
+  border: 1px solid #451cc1;
+  border-radius: 10px;
+  padding: 1rem;
+  max-height: 600px;
+  overflow-y: auto;
 }
 
-/* Lista de items en el carrito */
-#items-carrito {
-    margin: 1rem 0;
+#carrito h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #0a0a0b;
 }
 
-/* Separo la parte de items y del total */
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.item-carrito button {
+  background-color: #171414;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.2rem 0.2rem;
+  cursor: pointer;
+}
+
 #total {
-    border-top: 2px solid var(--gray-light);
-    padding-top: 1rem;
-    margin-top: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-/* Botón finalizar compra, ancho completo  */
 #finalizar-compra {
-    width: 100%;
-    margin-top: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1e1c9c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+#finalizar-compra:hover {
+  background-color: #0b5ed7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  #carrito {
+    margin-top: 2rem;
+  }
 }
