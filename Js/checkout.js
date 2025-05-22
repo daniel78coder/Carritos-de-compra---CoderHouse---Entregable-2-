@@ -33,25 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (datos) {
-          // Simulo un envío de datos con fetch 
           const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(datos)
           });
 
-          if (!respuesta.ok) {
-            throw new Error("No se pudo enviar la compra");
-          }
+          if (!respuesta.ok) throw new Error("No se pudo enviar la compra");
 
           Toastify({
             text: "Compra enviada con éxito 🎉",
             duration: 4000,
             gravity: "top",
             position: "center",
-            style: {
-              background: "#28a745",
-            }
+            style: { background: "#28a745" }
           }).showToast();
 
           Swal.fire({
@@ -66,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             confirmButtonText: "Aceptar"
           });
 
-          // Limpio el carrito
           carrito = [];
           actualizarCarrito();
         }

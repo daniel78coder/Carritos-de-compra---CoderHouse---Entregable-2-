@@ -10,7 +10,6 @@ const productos = [
     { id: 9, nombre: "Pincel Neon", precio: 2800, imagen: "./imagenes/Pincel Neon.png" },
     { id: 10, nombre: "Rodillo Antigota Pelo Medio", precio: 4800, imagen: "./imagenes/Rodillo Antigota Pelo Medio.png" },
     { id: 11, nombre: "Rodillo Antigota", precio: 4800, imagen: "./imagenes/Rodillo Antigota.png" },
-
 ];
 
 let carrito = [];
@@ -25,11 +24,11 @@ function renderProductos() {
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
-      <img src="${prod.imagen}" alt="${prod.nombre}">
-      <h3>${prod.nombre}</h3>
-      <p>$${prod.precio}</p>
-      <button class="agregar" data-id="${prod.id}">Agregar</button>
-    `;
+            <img src="${prod.imagen}" alt="${prod.nombre}">
+            <h3>${prod.nombre}</h3>
+            <p>$${prod.precio}</p>
+            <button class="agregar" data-id="${prod.id}">Agregar</button>
+        `;
         contenedorProductos.appendChild(div);
     });
 
@@ -65,9 +64,9 @@ function actualizarCarrito() {
         const div = document.createElement("div");
         div.classList.add("item-carrito");
         div.innerHTML = `
-      <span>${item.nombre} - $${item.precio}</span>
-      <button onclick="quitarItem(${index})">❌</button>
-    `;
+            <span>${item.nombre} - $${item.precio}</span>
+            <button onclick="quitarItem(${index})">❌</button>
+        `;
         contenedorCarrito.appendChild(div);
         total += item.precio;
     });
@@ -83,7 +82,7 @@ function quitarItem(index) {
 
 renderProductos();
 
-// Registro/Login de usuario
+// Login / Registro de Usuario
 document.getElementById("btn-login").addEventListener("click", () => {
     Swal.fire({
         title: 'Iniciar sesión o registrarse',
@@ -92,8 +91,8 @@ document.getElementById("btn-login").addEventListener("click", () => {
             '<input id="login-pass" type="password" class="swal2-input" placeholder="Contraseña">',
         confirmButtonText: 'Ingresar',
         preConfirm: () => {
-            const user = document.getElementById('login-user').value;
-            const pass = document.getElementById('login-pass').value;
+            const user = document.getElementById('login-user').value.trim();
+            const pass = document.getElementById('login-pass').value.trim();
             if (!user || !pass) {
                 Swal.showValidationMessage('Completá todos los campos');
                 return false;
@@ -112,7 +111,6 @@ document.getElementById("btn-login").addEventListener("click", () => {
                         return false;
                     }
                 } else {
-                    // Registramos nuevo usuario
                     let nuevoUsuario = { usuario: user, contraseña: pass };
                     usuarios.push(nuevoUsuario);
                     localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -149,4 +147,3 @@ function mostrarUsuarioActivo() {
 }
 
 window.addEventListener("DOMContentLoaded", mostrarUsuarioActivo);
-
