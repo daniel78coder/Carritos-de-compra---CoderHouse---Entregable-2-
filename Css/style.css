@@ -185,3 +185,116 @@ main {
     margin-top: 2rem;
   }
 }
+/* -------------------------------------------- */
+/* Estilos para el carrito mejorado */
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  gap: 10px;
+}
+
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nombre-producto {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.precio-unitario {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.cantidad-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cantidad {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cantidad:hover {
+  background: #0056b3;
+}
+
+.cantidad {
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.item-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.subtotal {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-eliminar:hover {
+  transform: scale(1.1);
+}
+
+.btn-vaciar {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.btn-vaciar:hover {
+  background: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .item-carrito {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .cantidad-controls {
+    justify-content: center;
+  }
+
+  .item-total {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

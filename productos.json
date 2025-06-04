@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "nombre": "Barniz Brillante",
+    "precio": 15000,
+    "imagen": "./imagenes/Barniz Brillante p-Maderas.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Latex Color Azul",
+    "precio": 31800,
+    "imagen": "./imagenes/Latex Color Azul electricox 10 lts.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Pincel Cerdas Finas medio",
+    "precio": 2800,
+    "imagen": "./imagenes/Pincel Cerdas Finas medio.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Barniz para Maderas",
+    "precio": 18000,
+    "imagen": "./imagenes/Barniz P-Maderas.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Enduido Plastico",
+    "precio": 11800,
+    "imagen": "./imagenes/Enduido Plastico.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Latex Color Verde",
+    "precio": 38800,
+    "imagen": "./imagenes/Latex Color Verde Mate x 10 lts.png"
+  },
+  {
+    "id": 7,
+    "nombre": "Lijas Anti Empaste",
+    "precio": 1500,
+    "imagen": "./imagenes/Lijas Anti Empaste.png"
+  },
+  {
+    "id": 8,
+    "nombre": "Lijas Madera y Pared",
+    "precio": 1800,
+    "imagen": "./imagenes/Lijas Madera y Pared.png"
+  },
+  {
+    "id": 9,
+    "nombre": "Pincel Neon",
+    "precio": 2800,
+    "imagen": "./imagenes/Pincel Neon.png"
+  },
+  {
+    "id": 10,
+    "nombre": "Rodillo Antigota Pelo Medio",
+    "precio": 4800,
+    "imagen": "./imagenes/Rodillo Antigota Pelo Medio.png"
+  },
+  {
+    "id": 11,
+    "nombre": "Rodillo Antigota",
+    "precio": 4800,
+    "imagen": "./imagenes/Rodillo Antigota.png"
+  }
+]
